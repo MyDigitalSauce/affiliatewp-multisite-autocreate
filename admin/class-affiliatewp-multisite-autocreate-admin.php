@@ -51,6 +51,7 @@ class Affiliatewp_Multisite_Autocreate_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->admin_settings_page();
 
 	}
 
@@ -60,19 +61,6 @@ class Affiliatewp_Multisite_Autocreate_Admin {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Affiliatewp_Multisite_Autocreate_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Affiliatewp_Multisite_Autocreate_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/affiliatewp-multisite-autocreate-admin.css', array(), $this->version, 'all' );
 
 	}
@@ -84,19 +72,13 @@ class Affiliatewp_Multisite_Autocreate_Admin {
 	 */
 	public function enqueue_scripts() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Affiliatewp_Multisite_Autocreate_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Affiliatewp_Multisite_Autocreate_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/affiliatewp-multisite-autocreate-admin.js', array( 'jquery' ), $this->version, false );
+
+	}
+
+	public function page() {
+
+		require plugin_dir_path( __FILE__ ) . 'partials/admin-settings-page.php';		
 
 	}
 

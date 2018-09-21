@@ -67,8 +67,8 @@ class Affiliatewp_Multisite_Autocreate {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'AFFILIATEWP_MULTISITE_AUTOCREATE_VERSION' ) ) {
+			$this->version = AFFILIATEWP_MULTISITE_AUTOCREATE_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
